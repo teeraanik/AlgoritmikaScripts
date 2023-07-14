@@ -18,8 +18,11 @@ public class Enemy : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision)
-    {
+    {       
         Player player = collision.collider.GetComponent<Player>();
-        player.TakeDamage(playerDamage);
+        if (player != null)
+        {
+        player.TakeDamage(playerDamage);           
+        }
     }
 }
